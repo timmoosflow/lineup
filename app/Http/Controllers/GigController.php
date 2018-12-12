@@ -56,25 +56,25 @@ class GigController extends Controller
       $gig = $request->isMethod('put') ? gig::findOrFail
       ($request->gig_id) : new gig;
 
-      $gig->id = request->input('gig_id');
-      $gig->gigDate = request->input('gigDate');
-      $gig->gigTime = request->input('gigTime');
-      $gig->gigDate = request->input('gigDate');
-      $gig->gigName = request->input('gigName');
-      $gig->gigVenue = request->input('gigVenue');
-      $gig->gigColor = request->input('gigColor');
-      $gig->gigGenre = request->input('gigGenre');
-      $gig->gigAct1 = request->input('gigAct1');
-      $gig->gigAct2 = request->input('gigAct2');
-      $gig->gigAct3 = request->input('gigAct3');
-      $gig->gigAct4 = request->input('gigAct4');
-      $gig->gigAct5 = request->input('gigAct5');
-      $gig->gigAct6 = request->input('gigAct6');
-      $gig->gigAct7 = request->input('gigAct7');
-      $gig->gigAct8 = request->input('gigAct8');
-      $gig->gigFace = request->input('gigFace');
-      $gig->gigTick = request->input('gigTick');
-      $gig->gigUser = request->input('gigUser');
+      $gig->id = $request->input('gig_id');
+      $gig->gigDate = $request->input('gigDate');
+      $gig->gigTime = $request->input('gigTime');
+      $gig->gigDate = $request->input('gigDate');
+      $gig->gigName = $request->input('gigName');
+      $gig->gigVenue = $request->input('gigVenue');
+      $gig->gigColor = $request->input('gigColor');
+      $gig->gigGenre = $request->input('gigGenre');
+      $gig->gigAct1 = $request->input('gigAct1');
+      $gig->gigAct2 = $request->input('gigAct2');
+      $gig->gigAct3 = $request->input('gigAct3');
+      $gig->gigAct4 = $request->input('gigAct4');
+      $gig->gigAct5 = $request->input('gigAct5');
+      $gig->gigAct6 = $request->input('gigAct6');
+      $gig->gigAct7 = $request->input('gigAct7');
+      $gig->gigAct8 = $request->input('gigAct8');
+      $gig->gigFace = $request->input('gigFace');
+      $gig->gigTick = $request->input('gigTick');
+      $gig->gigUser = $request->input('gigUser');
 
 
       if($gig->save()) {
