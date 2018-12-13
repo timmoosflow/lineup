@@ -15,23 +15,23 @@ class Gigs extends Migration
     {
         Schema::create('gigs', function (Blueprint $table) {
             $table->increments('gigId');
-            $table->string('gigDate');
-            $table->string('gigTime');
-            $table->string('gigName');
-            $table->string('gigVenue');   
-            $table->string('gigColor');
-            $table->string('gigGenre');
-            $table->string('gigAct1');   
-            $table->string('gigAct2');   
-            $table->string('gigAct3');
-            $table->string('gigAct4');
-            $table->string('gigAct5');   
-            $table->string('gigAct6');   
-            $table->string('gigAct7');
-            $table->string('gigAct8');
-            $table->string('gigFace');   
-            $table->string('gigTick');   
-            $table->string('gigUser');
+            $table->string('gigDate')->nullable();
+            $table->string('gigTime')->nullable();
+            $table->string('gigName')->nullable();
+            $table->string('gigVenue')->nullable();   
+            $table->string('gigColor')->nullable();
+            $table->string('gigGenre')->nullable();
+            $table->string('gigAct1')->nullable();  
+            $table->string('gigAct2')->nullable();
+            $table->string('gigAct3')->nullable();
+            $table->string('gigAct4')->nullable();
+            $table->string('gigAct5')->nullable();  
+            $table->string('gigAct6')->nullable();   
+            $table->string('gigAct7')->nullable();
+            $table->string('gigAct8')->nullable();
+            $table->string('gigFace')->nullable();   
+            $table->string('gigTick')->nullable();   
+            $table->string('gigUser')->nullable();
             $table->timestamps();
         });
     }
