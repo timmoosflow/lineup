@@ -11,6 +11,6 @@ class GigsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\gig::class, 30)->create();
+        factory(App\gig::class, 100)->create();
     }
 }

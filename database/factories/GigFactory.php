@@ -3,22 +3,22 @@
 use Faker\Generator as Faker;
 $factory->define(App\gig::class, function (Faker $faker) {
     return [
-        'gigDate' => $faker->text(6),
-        'gigTime' => $faker->text(6),
+        'gigDate' => $faker->date($format= 'Y-m-d', $max = 'now'),
+        'gigTime' => $faker->time('H:i'),
         'gigName' => $faker->text(8),
-        'gigVenue' => $faker->text(6),
-        'gigColor' => 'green',
-        'gigGenre' => $faker->text(6),
-        'gigAct1'  => $faker->text(10),
-        'gigAct2'  => $faker->text(10),
-        'gigAct3'  => $faker->text(10),
-        'gigAct4'  => $faker->text(10),
-        'gigAct5'  => $faker->text(10),
-        'gigAct6'  => $faker->text(10),
-        'gigAct7'  => $faker->text(10),
-        'gigAct8'  => $faker->text(10),
-        'gigFace'  => $faker->text(10),
-        'gigTick'  => $faker->text(10),
-        'gigUser'  => $faker->text(10)
+        'gigVenue' => $faker->randomElement(['Stroomhuis', 'Dynamo', 'Klokgbouw', 'Effenaar', 'Cafe Wilhelmina', 'Het Ketelhuis']),
+        'gigColor' => $faker->randomElement(['green', 'orange', 'red']),
+        'gigGenre' => $faker->randomElement(['Grunge', 'Metal', 'Noise', 'Rock', 'Instrumental', 'Drone', 'Country']),
+        'gigAct1'  => $faker->name,
+        'gigAct2'  => $faker->name,
+        'gigAct3'  => $faker->name,
+        'gigAct4'  => $faker->name,
+        'gigAct5'  => $faker->name,
+        'gigAct6'  => $faker->name,
+        'gigAct7'  => $faker->name,
+        'gigAct8'  => $faker->name,
+        'gigFace'  => 'www.facebook.com',
+        'gigTick'  => 'www.tickets.nl',
+        'gigUser'  => $faker->randomElement(['bigdaddy', 'bagdaddy', 'bugdaddy'])
     ];
 });
