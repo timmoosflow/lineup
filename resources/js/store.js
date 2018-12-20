@@ -21,7 +21,7 @@ export default {
         return state.currentUser;
       },
       authError(state) {
-        return state.authError;
+        return state.auth_error;
       },
     },
 
