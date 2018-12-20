@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>The Line Up</title>
-        <link href="/css/bulma.css" rel="stylesheet" type="text/css">
+        <link href="/css/style.css" rel="stylesheet" type="text/css">
         <link href="/css/app.css" rel="stylesheet" type="text/css">
 
     </head>
