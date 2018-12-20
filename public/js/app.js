@@ -11449,13 +11449,12 @@ module.exports = Cancel;
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["b"] = login;
 /* harmony export (immutable) */ __webpack_exports__["a"] = getLocalUser;
-
 function login(credentials) {
     return new Promise(function (res, rej) {
         axios.post('/api/auth/login', credentials).then(function (response) {
-            res(respons.data);
+            res(response.data);
         }).catch(function (err) {
-            rej('wrong password or email');
+            rej("Wrong email or password");
         });
     });
 }
@@ -51478,7 +51477,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.$store.dispatch('login');
 
             Object(__WEBPACK_IMPORTED_MODULE_0__helpers_auth__["b" /* login */])(this.$data.form).then(function (res) {
-                _this.$store.commit("loginSucces", res);
+                _this.$store.commit("loginSuccess", res);
                 _this.$router.push({ path: '/' });
             }).catch(function (error) {
                 _this.$store.commit("loginFailed", { error: error });
@@ -51631,13 +51630,13 @@ var user = Object(__WEBPACK_IMPORTED_MODULE_0__helpers_auth__["a" /* getLocalUse
             state.loading = true;
             state.auth_error = null;
         },
-        loginSucces: function loginSucces(state, payload) {
+        loginSuccess: function loginSuccess(state, payload) {
             state.auth_error = null;
             state.isLoggedIn = true;
             state.loading = false;
-            state.currentUSer = Object.assign({}, payload.user, { token: payload.acces_token });
+            state.currentUser = Object.assign({}, payload.user, { token: payload.access_token });
 
-            localstorage.setItem("user", JSON.stringify(state.currentUser));
+            localStorage.setItem("user", JSON.stringify(state.currentUser));
         },
         loginFailed: function loginFailed(state, payload) {
             state.loading = false;
@@ -51820,7 +51819,7 @@ var render = function() {
           _c(
             "router-link",
             { staticClass: "navbar-brand", attrs: { to: "/" } },
-            [_vm._v("My Vue App")]
+            [_vm._v("The Line Up")]
           ),
           _vm._v(" "),
           _vm._m(0),

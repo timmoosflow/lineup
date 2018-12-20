@@ -30,13 +30,13 @@ export default {
             state.loading = true;
             state.auth_error = null;
         },
-        loginSucces(state, payload) {
+        loginSuccess(state, payload) {
             state.auth_error = null;
             state.isLoggedIn = true;
             state.loading = false;
-            state.currentUSer = Object.assign({}, payload.user, {token: payload.acces_token});
+            state.currentUser = Object.assign({}, payload.user, {token: payload.access_token});
 
-            localstorage.setItem("user", JSON.stringify(state.currentUser));
+            localStorage.setItem("user", JSON.stringify(state.currentUser));
         },
         loginFailed(state, payload) {
             state.loading = false;
@@ -46,7 +46,7 @@ export default {
             localStorage.removeItem("user");
             state.isLoggedIn = false;
             state.currentUser = null;
-        }
+        },
     },
 
     actions: {

@@ -39,17 +39,17 @@
        },
        methods: {
            authenticate() {
-               this.$store.dispatch('login');
+                this.$store.dispatch('login');
 
-               login(this.$data.form)
+                login(this.$data.form)
                     .then((res) => {
-                      this.$store.commit("loginSucces", res);
-                      this.$router.push({path: '/'});
+                        this.$store.commit("loginSuccess", res);
+                        this.$router.push({path: '/'});
                     })
                     .catch((error) => {
-                       this.$store.commit("loginFailed", {error});
+                        this.$store.commit("loginFailed", {error});
                     });
-           }
+            }
        }
    }
 </script>
