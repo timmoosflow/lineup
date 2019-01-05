@@ -14,12 +14,12 @@ class Gig extends JsonResource
      */
     public function toArray($request)
     {
-        //return parent::toArray($request);
-        return [
+        return parent::toArray($request);
+       /* return [
             'id' => $this->id,
             'Name' => $this->gigName,
             'place' => $this->gigVeneu
-        ];
+        ]; */
     }
 
 
