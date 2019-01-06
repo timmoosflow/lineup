@@ -4,8 +4,8 @@
     margin-right: auto;
   }
 
-.hidden {
-    display: none;
+.fixed {
+    position: sticky;
 }
 
   @media only screen and (max-width: 800px) {

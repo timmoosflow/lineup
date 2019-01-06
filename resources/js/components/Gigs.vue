@@ -36,7 +36,7 @@
             setGig: function(index) {
               let result = this.gigs.find(obj => obj.id == index);
               this.SET_GIG(result);
-              this.$emit('show_back');
+              this.$emit('show-back');
             }
         }
     }

@@ -51717,7 +51717,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 return obj.id == index;
             });
             this.SET_GIG(result);
-            this.$emit('show_back');
+            this.$emit('show-back');
         }
     })
 });
@@ -52123,9 +52123,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'main-app',
+    data: function data() {
+        return {
+            ok: false
+        };
+    },
+
     components: { Header: __WEBPACK_IMPORTED_MODULE_0__Header_vue___default.a, Navibar: __WEBPACK_IMPORTED_MODULE_1__Navibar_vue___default.a, Footer: __WEBPACK_IMPORTED_MODULE_2__Footer_vue___default.a, GigDetail: __WEBPACK_IMPORTED_MODULE_3__GigDetail_vue___default.a },
     methods: {
-        showBack: function showBack() {}
+        showBack: function showBack() {
+            this.ok = true;
+        },
+        hideBack: function hideBack() {
+            this.ok = false;
+        }
     }
 });
 
@@ -52673,7 +52684,17 @@ var render = function() {
       1
     ),
     _vm._v(" "),
-    _c("div", { staticClass: "back" }, [_c("GigDetail")], 1)
+    _c(
+      "div",
+      {
+        directives: [
+          { name: "show", rawName: "v-show", value: _vm.ok, expression: "ok" }
+        ],
+        staticClass: "fixed back"
+      },
+      [_c("GigDetail", { on: { "hide-back": _vm.hideBack } })],
+      1
+    )
   ])
 }
 var staticRenderFns = []
@@ -52791,7 +52812,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'GigDetail',
-    methods: {},
+    methods: {
+        closeBack: function closeBack() {
+            this.$emit('hide-back');
+        }
+    },
     computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapState */])(['gig'])
 
 });
@@ -52804,7 +52829,20 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n    " + _vm._s(_vm.gig.gigGenre) + "\n")])
+  return _c("div", { staticClass: "card text-center" }, [
+    _c("p", [_vm._v(" " + _vm._s(_vm.gig.gigGenre) + " ")]),
+    _c(
+      "span",
+      {
+        on: {
+          click: function($event) {
+            _vm.closeBack()
+          }
+        }
+      },
+      [_vm._v("x")]
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

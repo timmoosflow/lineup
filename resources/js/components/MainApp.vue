@@ -1,13 +1,13 @@
 <template>
     <div id="main" class="flip-container">
-        <div class=front>
+        <div class="front">
             <Header/>
             <Navibar/>
             <router-view @show-back="showBack"></router-view>
             <Footer/>
         </div>
-        <div class="back">
-            <GigDetail/>
+        <div v-show="ok" class="fixed back">
+            <GigDetail @hide-back="hideBack"/>
         </div>
     </div>
 </template>
@@ -20,10 +20,18 @@
 
     export default {
         name: 'main-app',
+        data () {
+            return {
+                ok:false,
+            };
+        },
         components: {Header, Navibar, Footer, GigDetail},
         methods: {
             showBack: function () {
-
+               this.ok = true;
+            },
+            hideBack: function () {
+               this.ok = false;
             }
         }
     }

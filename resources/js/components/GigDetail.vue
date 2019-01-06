@@ -1,6 +1,6 @@
 <template>
-    <div>
-        {{gig.gigGenre}}
+    <div class="card text-center">
+       <p> {{gig.gigGenre}} </p><span v-on:click="closeBack()">x</span>
     </div>
 
   </template>
@@ -11,7 +11,9 @@
     export default {
         name: 'GigDetail',
         methods: {
-
+           closeBack: function() {
+                this.$emit('hide-back');
+            }
         },
         computed:  mapState([
            'gig'
