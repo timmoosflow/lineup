@@ -51717,7 +51717,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 return obj.id == index;
             });
             this.SET_GIG(result);
-            this.$emit('show-back');
+            this.$emit('show-back', 'GigDetail');
         }
     })
 });
@@ -52099,10 +52099,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Header_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Header_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Navibar_vue__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Navibar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Navibar_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Footer_vue__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Footer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Footer_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__GigDetail_vue__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__GigDetail_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__GigDetail_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Filterbar_vue__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Filterbar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Filterbar_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Footer_vue__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Footer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__Footer_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__GigDetail_vue__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__GigDetail_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__GigDetail_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__AddGig_vue__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__AddGig_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__AddGig_vue__);
 //
 //
 //
@@ -52117,6 +52121,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+
+
 
 
 
@@ -52127,14 +52134,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     name: 'main-app',
     data: function data() {
         return {
-            ok: false
+            ok: false,
+            CurrentComponent: ''
         };
     },
 
-    components: { Header: __WEBPACK_IMPORTED_MODULE_0__Header_vue___default.a, Navibar: __WEBPACK_IMPORTED_MODULE_1__Navibar_vue___default.a, Footer: __WEBPACK_IMPORTED_MODULE_2__Footer_vue___default.a, GigDetail: __WEBPACK_IMPORTED_MODULE_3__GigDetail_vue___default.a },
+    components: { Header: __WEBPACK_IMPORTED_MODULE_0__Header_vue___default.a, Navibar: __WEBPACK_IMPORTED_MODULE_1__Navibar_vue___default.a, Filterbar: __WEBPACK_IMPORTED_MODULE_2__Filterbar_vue___default.a, Footer: __WEBPACK_IMPORTED_MODULE_3__Footer_vue___default.a, GigDetail: __WEBPACK_IMPORTED_MODULE_4__GigDetail_vue___default.a, AddGig: __WEBPACK_IMPORTED_MODULE_5__AddGig_vue___default.a },
     methods: {
-        showBack: function showBack() {
+        showBack: function showBack(value) {
             this.ok = true;
+            function showComp(value) {
+                CurrentComponent = value;
+            }
+        },
+        showBack2: function showBack2(value2) {
+            this.ok = true;
+            function showComp(value2) {
+                CurrentComponent = value2;
+            }
         },
         hideBack: function hideBack() {
             this.ok = false;
@@ -52828,6 +52845,8 @@ var render = function() {
         _vm._v(" "),
         _c("Navibar"),
         _vm._v(" "),
+        _c("Filterbar", { on: { "show-back": _vm.showBack2 } }),
+        _vm._v(" "),
         _c("router-view", { on: { "show-back": _vm.showBack } }),
         _vm._v(" "),
         _c("Footer")
@@ -52843,7 +52862,12 @@ var render = function() {
         ],
         staticClass: "fixed back text-center"
       },
-      [_c("GigDetail", { on: { "hide-back": _vm.hideBack } })],
+      [
+        _c(_vm.CurrentComponent, {
+          tag: "component",
+          on: { "hide-back": _vm.hideBack }
+        })
+      ],
       1
     )
   ])
@@ -52893,6 +52917,212 @@ function initialize(store, router) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(86)
+/* template */
+var __vue_template__ = __webpack_require__(87)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/Filterbar.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-e6287b80", Component.options)
+  } else {
+    hotAPI.reload("data-v-e6287b80", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 86 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: 'Filterbar',
+    methods: {
+        addGig: function addGig() {
+            this.$emit('show-back', 'AddGig');
+        }
+    },
+    computed: {}
+});
+
+/***/ }),
+/* 87 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "nav",
+    { staticClass: "navbar navbar-expand-lg navbar-light navbar-laravel" },
+    [
+      _c(
+        "button",
+        {
+          staticClass: "float-right",
+          on: {
+            click: function($event) {
+              _vm.addGig()
+            }
+          }
+        },
+        [_vm._v("+")]
+      )
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-e6287b80", module.exports)
+  }
+}
+
+/***/ }),
+/* 88 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(89)
+/* template */
+var __vue_template__ = __webpack_require__(90)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/AddGig.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2441a8e2", Component.options)
+  } else {
+    hotAPI.reload("data-v-2441a8e2", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 89 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: 'AddGig',
+    methods: {
+        closeBack: function closeBack() {
+            this.$emit('hide-back');
+        }
+    },
+    computed: {}
+});
+
+/***/ }),
+/* 90 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "card gig-detail" }, [
+    _vm._v("\n    this is the add gig componmnent\n")
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-2441a8e2", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
