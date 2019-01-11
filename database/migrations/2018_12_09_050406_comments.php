@@ -14,10 +14,10 @@ class Comments extends Migration
     public function up()
     {
        Schema::create('comments', function (Blueprint $table) {
-        $table->increments('commentId');
+        $table->increments('id');
         $table->string('commentUser');
         $table->integer('commentGig');
-        $table->string('commentText');    
+        $table->string('commentText');
         $table->timestamps();
      });
     }

@@ -1,10 +1,10 @@
 <template>
-    <div class="text-center p-4">
-      <div v-on:click="setGig(gig.id)" v-for="gig in gigs" v-bind:key="gig.id" class="card mb-4">
-          <div>{{gig.gigDate}}</div>
+    <div class="text-center">
+      <div v-on:click="setGig(gig.id)" v-for="gig in gigs" v-bind:key="gig.id" class="card">
+          <div class="mt-4">{{gig.gigDate}}</div>
           <div>{{gig.gigTime}}</div>
           <div>{{gig.gigGenre}}</div>
-          <div>@{{gig.gigVenue}}</div>
+          <div class="mb-4">@{{gig.gigVenue}}</div>
         </div>
     </div>
 </template>

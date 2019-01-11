@@ -6,7 +6,7 @@
             <router-view @show-back="showBack"></router-view>
             <Footer/>
         </div>
-        <div v-show="ok" class="fixed back">
+        <div v-show="ok" class="fixed back text-center">
             <GigDetail @hide-back="hideBack"/>
         </div>
     </div>

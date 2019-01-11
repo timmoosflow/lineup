@@ -5,7 +5,15 @@
   }
 
 .fixed {
-    position: sticky;
+    position: fixed;
+    top: 0px;
+}
+
+.gig-detail {
+    display: block;
+    width: 800px;
+    height: 100vh;
+    background: white;
 }
 
   @media only screen and (max-width: 800px) {
@@ -14,4 +22,8 @@
         margin-left: auto;
         margin-right: auto;
       }
+
+    .gig-detail {
+        width: 100vw;
+    }
   }

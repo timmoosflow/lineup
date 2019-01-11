@@ -36,7 +36,7 @@ class GigController extends Controller
         //get specific gig
         $gig = gig::findOrFail($id);
 
-        //return single gig as resourc
+        //return single gig as resource
         return new GigResource($gig);
 
     }
