@@ -11,7 +11,7 @@
         name: 'Filterbar',
         methods: {
            addGig: function () {
-               this.$emit('show-back', 'AddGig');
+               this.$emit('show-back2', 'AddGig');
            }
         },
         computed: {

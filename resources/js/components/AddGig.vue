@@ -1,6 +1,7 @@
 <template>
     <div class="card gig-detail">
         this is the add gig componmnent
+                  <span v-on:click="closeBack()">x</span>
     </div>
 
   </template>

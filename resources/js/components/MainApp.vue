@@ -3,7 +3,7 @@
         <div class="front">
             <Header/>
             <Navibar/>
-            <Filterbar @show-back="showBack2"/>
+            <Filterbar @show-back2="showBack2"/>
             <router-view @show-back="showBack"></router-view>
             <Footer/>
         </div>
@@ -33,16 +33,12 @@
         methods: {
             showBack: function (value) {
                this.ok = true;
-               function showComp(value) {
-                 CurrentComponent = (value);
-               }
-
+               this.CurrentComponent = (value);
             },
             showBack2: function (value2) {
                this.ok = true;
-               function showComp(value2) {
-                 CurrentComponent = (value2);
-               }
+               this.CurrentComponent = (value2);
+
 
             },
             hideBack: function () {
@@ -51,3 +47,4 @@
         }
     }
 </script>
+
